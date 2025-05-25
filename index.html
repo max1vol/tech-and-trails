@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Cambridge Tech & Trails</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Only-CSS extra: angled hero background -->
+  <style>
+    .angled-bg:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background: #38bdf8;
+      /* Tailwind cyan-400 */
+      transform: skewY(-3deg);
+      transform-origin: top left;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-gray-100">
+
+  <!-- 1. NAVBAR (unique feature #1) -->
+  <nav class="bg-white shadow sticky top-0 z-20">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-xl font-bold text-cyan-600">Tech&nbsp;&amp;&nbsp;Trails</a>
+
+      <!-- hamburger = sidebar trigger -->
+      <button id="sideBtn" class="md:hidden text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- desktop menu -->
+      <ul class="hidden md:flex space-x-6 text-gray-700">
+        <li><a href="#routes" class="hover:text-cyan-600">Routes</a></li>
+        <li><a href="#projects" class="hover:text-cyan-600">Projects</a></li>
+        <li><a href="#faq" class="hover:text-cyan-600">FAQ</a></li>
+        <li><a href="#contact" class="hover:text-cyan-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 2. SIDEBAR (unique feature #2) -->
+  <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow
+              transform -translate-x-full transition-transform
+              md:hidden z-30">
+    <div class="p-6 space-y-4">
+      <a href="#routes" class="block text-gray-700 hover:text-cyan-600">Routes</a>
+      <a href="#projects" class="block text-gray-700 hover:text-cyan-600">Projects</a>
+      <a href="#faq" class="block text-gray-700 hover:text-cyan-600">FAQ</a>
+      <a href="#contact" class="block text-gray-700 hover:text-cyan-600">Contact</a>
+      <button id="closeSide" class="mt-6 text-sm text-gray-500">Close</button>
+    </div>
+  </aside>
+
+  <!-- 3. HERO -->
+  <header class="relative angled-bg text-white">
+    <div class="container mx-auto px-4 py-20 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Explore · Build · Move</h1>
+      <p class="text-lg md:text-2xl">
+        Best routes & geeky projects from Cambridge, UK
+      </p>
+    </div>
+  </header>
+
+  <!-- 4. ROUTE CARDS -->
+  <section id="routes" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8 text-center">Favourite Routes</h2>
+
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- card 1 -->
+      <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://source.unsplash.com/800x600/?river,path" alt="" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">River Cam 10K</h3>
+          <p class="text-gray-600 text-sm">
+            Scenic out-and-back along both banks starting from Jesus Green.
+          </p>
+          <span class="inline-block mt-4 px-3 py-1 text-xs
+                     bg-cyan-100 text-cyan-700 rounded-full">Running</span>
+        </div>
+      </article>
+
+      <!-- card 2 -->
+      <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://source.unsplash.com/800x600/?forest,trail" alt="" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Gog Magog Hills Hike</h3>
+          <p class="text-gray-600 text-sm">
+            6-mile loop with views across the fens; gentle climbs, great sunset.
+          </p>
+          <span class="inline-block mt-4 px-3 py-1 text-xs
+                     bg-green-100 text-green-700 rounded-full">Hiking</span>
+        </div>
+      </article>
+
+      <!-- card 3 -->
+      <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="https://source.unsplash.com/800x600/?tennis,court" alt="" class="h-40 w-full object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Parker’s Piece Courts</h3>
+          <p class="text-gray-600 text-sm">
+            Open-air hard courts, book online – perfect after-work rally.
+          </p>
+          <span class="inline-block mt-4 px-3 py-1 text-xs
+                     bg-yellow-100 text-yellow-700 rounded-full">Tennis</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 5. PROJECT CARDS -->
+  <section id="projects" class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8 text-center">
+        Latest Hardware & Code
+      </h2>
+
+      <div class="grid gap-8 md:grid-cols-2">
+
+        <article class="bg-white rounded-lg shadow-md p-6 flex">
+          <img src="https://source.unsplash.com/400x400/?raspberrypi" class="w-32 h-32 object-cover rounded-md mr-6"
+            alt="">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              LoRaWAN River Temperature Sensor
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Waterproof ESP32 node tweeting the Cam’s temperature hourly.
+            </p>
+            <a href="#" class="text-cyan-600 text-sm mt-4 inline-block">
+              Read build log →
+            </a>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-lg shadow-md p-6 flex">
+          <img src="https://source.unsplash.com/400x400/?math,notebook" class="w-32 h-32 object-cover rounded-md mr-6"
+            alt="">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">
+              Visualising Prime Gaps with D3
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Interactive plot of first 10 000 primes in only 40 kB of JS.
+            </p>
+            <a href="#" class="text-cyan-600 text-sm mt-4 inline-block">
+              Dive into code →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FAQ (accordion via <details>) -->
+  <section id="faq" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-8 text-center">Frequently Asked</h2>
+    <div class="max-w-2xl mx-auto space-y-4">
+
+      <details class="bg-white shadow rounded-lg p-4">
+        <summary class="cursor-pointer font-medium">
+          Why mix sports and tech?
+        </summary>
+        <p class="mt-2 text-gray-600 text-sm">
+          Endorphins + caffeine = clean code. A balanced brain squashes bugs.
+        </p>
+      </details>
+
+      <details class="bg-white shadow rounded-lg p-4">
+        <summary class="cursor-pointer font-medium">
+          Can I contribute a route or project?
+        </summary>
+        <p class="mt-2 text-gray-600 text-sm">
+          Absolutely – use the form below or open a pull request on GitHub.
+        </p>
+      </details>
+
+    </div>
+  </section>
+
+  <!-- 7. CONTACT -->
+  <section id="contact" class="bg-cyan-600 text-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-center">Say Hi</h2>
+      <form class="max-w-xl mx-auto space-y-4">
+        <input type="text" placeholder="Name" class="w-full px-4 py-2 rounded text-gray-700" />
+        <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded text-gray-700" />
+        <textarea rows="4" placeholder="Message" class="w-full px-4 py-2 rounded text-gray-700"></textarea>
+        <button type="submit" class="bg-white text-cyan-600 px-6 py-2 rounded font-semibold">
+          Send
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-4 text-center">
+      © 2025 Tech & Trails — Built in Cambridge with Tailwind CSS
+    </div>
+  </footer>
+
+  <!-- 9. JS (≈20 lines → ~4 % of file) -->
+  <script>
+    const sideBtn = document.getElementById('sideBtn');
+    const sidebar = document.getElementById('sidebar');
+    const closeSide = document.getElementById('closeSide');
+
+    sideBtn.addEventListener('click', () =>
+      sidebar.classList.toggle('-translate-x-full')
+    );
+    closeSide.addEventListener('click', () =>
+      sidebar.classList.add('-translate-x-full')
+    );
+  </script>
+
+</body>
+
+</html>
