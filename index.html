@@ -6,48 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cambridge Active Routes & Spots</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Custom CSS for things Tailwind might not cover easily */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Styling for the modal content if it overflows */
-    #modalContentArea::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    #modalContentArea::-webkit-scrollbar-thumb {
-      background-color: #9ca3af;
-      /* Tailwind gray-400 */
-      border-radius: 4px;
-    }
-
-    #modalContentArea::-webkit-scrollbar-track {
-      background-color: #e5e7eb;
-      /* Tailwind gray-200 */
-    }
-
-    .prose {
-      /* Basic prose styling for long descriptions */
-      color: #374151;
-      /* gray-700 */
-    }
-
-    .prose p {
-      margin-bottom: 1em;
-    }
-
-    .prose ul {
-      list-style-type: disc;
-      padding-left: 1.5em;
-      margin-bottom: 1em;
-    }
-
-    .prose li {
-      margin-bottom: 0.5em;
-    }
-  </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
@@ -94,11 +52,12 @@
   <main class="py-12">
     <div class="container mx-auto px-4">
 
-      <!-- Routes Section (using Route Cards - Feature 3) -->
+      <!-- Routes Section -->
       <section id="routes" class="mb-16 scroll-mt-20">
         <h2 class="text-3xl font-bold mb-10 text-center text-gray-700">Running & Hiking Routes</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Route Card 1 (Easy) -->
+
+          <!-- Route Card 1 -->
           <div
             class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
             <img src="images/river-cam.png" alt="River Cam Path" class="w-full h-56 object-cover">
@@ -107,22 +66,15 @@
               <p class="text-gray-600 text-sm mb-1"><span class="font-medium">Distance:</span> 7km (Out and back)</p>
               <p class="text-gray-600 text-sm mb-3"><span class="font-medium">Difficulty:</span> <span
                   class="text-green-600 font-semibold">Easy</span></p>
-              <p class="text-gray-700 mb-4 flex-grow">Enjoy a flat, scenic run or walk along the iconic River Cam,
-                passing
-                boathouses and green spaces. Start near the city centre.</p>
-              <button
-                class="open-route-modal-button mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-                data-modal-image-src="images/river-cam.png" data-modal-title="Classic River Cam Path"
-                data-modal-distance="7km (Out and back)" data-modal-difficulty="Easy"
-                data-modal-difficulty-class="text-green-600 font-semibold"
-                data-modal-short-description="Enjoy a flat, scenic run or walk along the iconic River Cam, passing boathouses and green spaces. Start near the city centre."
-                data-modal-long-description="This iconic route is perfect for all abilities. Starting near Scudamore's Mill Lane Punting Station, follow the well-paved path northwards. You'll pass St John's College, the 'Backs' of several colleges, and numerous boathouses. Continue past Midsummer Common and Stourbridge Common.<br><br>The path can get busy, especially on sunny weekends. Consider an early morning or weekday run for a quieter experience. Excellent for flat, consistent pacing. You can turn back at any point to adjust the distance.">
+              <p class="text-gray-700 mb-4 flex-grow">Enjoy a flat, scenic run or walk along the iconic River Cam...</p>
+              <a href="#modal-route1"
+                class="mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                 View Details →
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Route Card 2 (Easy) -->
+          <!-- Route Card 2 -->
           <div
             class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
             <img src="images/granchester.png" alt="Grantchester Meadows" class="w-full h-56 object-cover">
@@ -132,21 +84,15 @@
               <p class="text-gray-600 text-sm mb-3"><span class="font-medium">Difficulty:</span> <span
                   class="text-green-600 font-semibold">Easy</span></p>
               <p class="text-gray-700 mb-4 flex-grow">A beautiful loop through the famous meadows where cows graze
-                freely.
-                Perfect for a relaxed pace and enjoying nature.</p>
-              <button
-                class="open-route-modal-button mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-                data-modal-image-src="images/granchester.png" data-modal-title="Grantchester Meadows Loop"
-                data-modal-distance="5km" data-modal-difficulty="Easy"
-                data-modal-difficulty-class="text-green-600 font-semibold"
-                data-modal-short-description="A beautiful loop through the famous meadows where cows graze freely. Perfect for a relaxed pace and enjoying nature."
-                data-modal-long-description="Escape the city bustle with this idyllic loop. Start from the Lammas Land car park or by walking down Grantchester Street. The path through the meadows is mostly grass, so it can be muddy after rain. Enjoy views of King's College Chapel in the distance. You might share the path with grazing cows!<br><br>You can extend the route by continuing towards Grantchester village for a refreshment stop at The Orchard Tea Garden before looping back. A very family-friendly walk.">
+                freely...</p>
+              <a href="#modal-route2"
+                class="mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                 View Details →
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Route Card 3 (Easy to Moderate) -->
+          <!-- Route Card 3 -->
           <div
             class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
             <img src="images/milton.png" alt="Milton Country Park" class="w-full h-56 object-cover">
@@ -155,22 +101,15 @@
               <p class="text-gray-600 text-sm mb-1"><span class="font-medium">Distance:</span> 3-6km (Various loops)</p>
               <p class="text-gray-600 text-sm mb-3"><span class="font-medium">Difficulty:</span> <span
                   class="text-yellow-600 font-semibold">Easy to Moderate</span></p>
-              <p class="text-gray-700 mb-4 flex-grow">Explore varied trails around lakes and through woodlands. Great
-                for
-                trail running or a family walk. Pay & display parking.</p>
-              <button
-                class="open-route-modal-button mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-                data-modal-image-src="images/milton.png" data-modal-title="Milton Country Park Trails"
-                data-modal-distance="3-6km (Various loops)" data-modal-difficulty="Easy to Moderate"
-                data-modal-difficulty-class="text-yellow-600 font-semibold"
-                data-modal-short-description="Explore varied trails around lakes and through woodlands. Great for trail running or a family walk. Pay & display parking."
-                data-modal-long-description="Located just north of Cambridge, Milton Country Park offers a network of well-maintained gravel and dirt paths winding around several lakes and through diverse woodlands. There are marked trails of varying lengths, making it easy to customize your run or walk from 3km to 6km or more.<br><br>It's a popular spot for dog walkers and families. Look out for varied birdlife. Paid parking is available. Check their website for opening times and any events.">
+              <p class="text-gray-700 mb-4 flex-grow">Explore varied trails around lakes and through woodlands...</p>
+              <a href="#modal-route3"
+                class="mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                 View Details →
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Route Card 4 (Moderate) -->
+          <!-- Route Card 4 -->
           <div
             class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
             <img src="images/wandlebury.png" alt="Wandlebury Country Park" class="w-full h-56 object-cover">
@@ -179,22 +118,15 @@
               <p class="text-gray-600 text-sm mb-1"><span class="font-medium">Distance:</span> 8-12km</p>
               <p class="text-gray-600 text-sm mb-3"><span class="font-medium">Difficulty:</span> <span
                   class="text-yellow-600 font-semibold">Moderate</span></p>
-              <p class="text-gray-700 mb-4 flex-grow">Slightly further afield, offering rolling terrain with gentle
-                hills and
-                expansive views. Ideal for a longer hike or a more challenging run.</p>
-              <button
-                class="open-route-modal-button mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-                data-modal-image-src="images/wandlebury.png" data-modal-title="Wandlebury & Gog Magog Hills"
-                data-modal-distance="8-12km" data-modal-difficulty="Moderate"
-                data-modal-difficulty-class="text-yellow-600 font-semibold"
-                data-modal-short-description="Slightly further afield, offering rolling terrain with gentle hills and expansive views. Ideal for a longer hike or a more challenging run."
-                data-modal-long-description="For those seeking a bit more elevation and a taste of chalk grassland, Wandlebury Country Park (a former Iron Age hillfort) and the adjacent Gog Magog Hills offer fantastic views. Trails are a mix of woodland paths and open fields.<br><br>The 'Gogs' provide some of the only real hills in the immediate Cambridge area, great for hill repeats or a more strenuous hike. Managed by Cambridge Past, Present & Future. Parking available (charges may apply).">
+              <p class="text-gray-700 mb-4 flex-grow">Slightly further afield, offering rolling terrain...</p>
+              <a href="#modal-route4"
+                class="mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                 View Details →
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Route Card 5 (Moderate) -->
+          <!-- Route Card 5 -->
           <div
             class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
             <img src="images/fen-way.png" alt="Fen Rivers Way Section" class="w-full h-56 object-cover">
@@ -203,22 +135,16 @@
               <p class="text-gray-600 text-sm mb-1"><span class="font-medium">Distance:</span> ~10km (One way)</p>
               <p class="text-gray-600 text-sm mb-3"><span class="font-medium">Difficulty:</span> <span
                   class="text-yellow-600 font-semibold">Moderate</span></p>
-              <p class="text-gray-700 mb-4 flex-grow">Follow a section of this long-distance path along the River Cam.
-                Mostly
-                flat but can be muddy. Train back from Waterbeach for a one-way trip.</p>
-              <button
-                class="open-route-modal-button mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-                data-modal-image-src="images/fen-way.png" data-modal-title="Fen Rivers Way (Cambridge to Waterbeach)"
-                data-modal-distance="~10km (One way)" data-modal-difficulty="Moderate"
-                data-modal-difficulty-class="text-yellow-600 font-semibold"
-                data-modal-short-description="Follow a section of this long-distance path along the River Cam. Mostly flat but can be muddy. Train back from Waterbeach for a one-way trip."
-                data-modal-long-description="This section of the long-distance Fen Rivers Way offers a true Fenland experience. The path follows the River Cam (or sometimes a parallel lode) northwards from Cambridge. It's very flat but can be exposed to wind.<br><br>The surface is mixed, sometimes grassy, sometimes a bit rougher, and prone to muddiness after wet weather. It's great for seeing Fenland wildlife. The ~10km stretch to Waterbeach is popular, with a convenient train station in Waterbeach for the return journey to Cambridge.">
+              <p class="text-gray-700 mb-4 flex-grow">Follow a section of this long-distance path along the River Cam...
+              </p>
+              <a href="#modal-route5"
+                class="mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                 View Details →
-              </button>
+              </a>
             </div>
           </div>
 
-          <!-- Route Card 6 (Hard) -->
+          <!-- Route Card 6 -->
           <div
             class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:scale-105 transition-transform duration-300">
             <img src="images/green-ring.png" alt="Cambridge Outer Ring Path" class="w-full h-56 object-cover">
@@ -227,24 +153,17 @@
               <p class="text-gray-600 text-sm mb-1"><span class="font-medium">Distance:</span> 20km+</p>
               <p class="text-gray-600 text-sm mb-3"><span class="font-medium">Difficulty:</span> <span
                   class="text-red-600 font-semibold">Hard</span></p>
-              <p class="text-gray-700 mb-4 flex-grow">A challenging, longer route circumnavigating Cambridge, linking
-                various
-                green spaces, towpaths, and quieter roads. Requires good stamina and navigation.</p>
-              <button
-                class="open-route-modal-button mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300"
-                data-modal-image-src="images/green-ring.png" data-modal-title="Cambridge " Green Ring" Challenge"
-                data-modal-distance="20km+" data-modal-difficulty="Hard"
-                data-modal-difficulty-class="text-red-600 font-semibold"
-                data-modal-short-description="A challenging, longer route circumnavigating Cambridge, linking various green spaces, towpaths, and quieter roads. Requires good stamina and navigation."
-                data-modal-long-description="This is a more ambitious, self-devised challenge for experienced runners or long-distance walkers. The concept is to link up various green spaces, cycle paths, towpaths, and quieter residential streets to create a loop of 20km or more circumnavigating the city.<br><br>It requires good navigation skills (using a map app like Komoot or Strava route builder is recommended) and self-sufficiency. Expect varied terrain. A great way to explore the different facets of Cambridge's periphery.">
+              <p class="text-gray-700 mb-4 flex-grow">A challenging, longer route circumnavigating Cambridge...</p>
+              <a href="#modal-route6"
+                class="mt-auto self-start inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300">
                 View Details →
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- "Tip of the Week" Callout (Feature 6) -->
+      <!-- "Tip of the Week" Callout -->
       <section id="about"
         class="mb-16 scroll-mt-20 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-800 p-6 rounded-md shadow">
         <h3 class="text-2xl font-semibold mb-3">Runner's Tip!</h3>
@@ -252,14 +171,14 @@
           weekday run for a more peaceful experience and to fully enjoy the scenery.</p>
       </section>
 
-      <!-- FAQ Section (Feature 5 - Accordion) -->
+      <!-- FAQ Section -->
       <section id="faq" class="mb-12 scroll-mt-20">
         <h2 class="text-3xl font-bold mb-10 text-center text-gray-700">Frequently Asked Questions</h2>
         <div class="space-y-4 max-w-3xl mx-auto">
           <details class="bg-white p-6 rounded-lg shadow group">
             <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">
               Are these routes suitable for cycling too?
-              <span class="group-open:rotate-180 transform transition-transform duration-300">
+              <span class="transform transition-transform duration-300 group-open:rotate-180">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" class="w-5 h-5 text-blue-600">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -273,7 +192,7 @@
           <details class="bg-white p-6 rounded-lg shadow group">
             <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">
               How do I find these spots and routes?
-              <span class="group-open:rotate-180 transform transition-transform duration-300">
+              <span class="transform transition-transform duration-300 group-open:rotate-180">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor" class="w-5 h-5 text-blue-600">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -284,40 +203,12 @@
               Google Maps, Komoot, or OS Maps) with the spot name or a nearby landmark for precise starting points and
               navigation. For country parks, search for their official websites for visitor information.</p>
           </details>
-          <details class="bg-white p-6 rounded-lg shadow group">
-            <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">
-              Is there parking available for these routes?
-              <span class="group-open:rotate-180 transform transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor" class="w-5 h-5 text-blue-600">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </span>
-            </summary>
-            <p class="mt-3 text-gray-700">For routes starting in central Cambridge, parking can be limited and
-              expensive; consider public transport or cycling to the start. Country parks like Milton and Wandlebury
-              usually have dedicated pay & display parking. Always check specific location details before you travel.
-            </p>
-          </details>
-          <details class="bg-white p-6 rounded-lg shadow group">
-            <summary class="font-semibold text-lg cursor-pointer list-none flex justify-between items-center">
-              Can I contribute a route or spot?
-              <span class="group-open:rotate-180 transform transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor" class="w-5 h-5 text-blue-600">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </span>
-            </summary>
-            <p class="mt-3 text-gray-700">Currently, this is a static demonstration site. In a full version, we'd love
-              to have a submission feature! For now, enjoy the curated selections.</p>
-          </details>
         </div>
       </section>
     </div>
   </main>
 
-  <!-- Footer (Feature 2) -->
+  <!-- Footer -->
   <footer class="bg-gray-800 text-gray-300 py-10 text-center">
     <div class="container mx-auto px-4">
       <p class="mb-2">© 2025 Max - Cambridge</p>
@@ -325,41 +216,244 @@
     </div>
   </footer>
 
-  <!-- Route Details Modal -->
-  <div id="routeModal"
-    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm flex items-center justify-center p-4 z-[60] hidden"
-    aria-labelledby="modalTitle" role="dialog" aria-modal="true">
-    <div id="modalDialog"
-      class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col transform transition-all duration-300 ease-out scale-95 opacity-0">
+  <!-- MODALS (One for each route, using :target selector) -->
+
+  <!-- Modal for Route 1: Classic River Cam Path -->
+  <div id="modal-route1"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm items-center justify-center p-4 z-[60] hidden target:flex"
+    aria-labelledby="modalTitle1" role="dialog" aria-modal="true">
+    <a href="#close" class="absolute inset-0" aria-label="Close modal backdrop"></a>
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
       <div class="flex justify-between items-start p-5 border-b rounded-t">
-        <h3 id="modalTitle" class="text-2xl font-bold text-blue-700">Route Title</h3>
-        <button id="closeModalButton" type="button"
+        <h3 id="modalTitle1" class="text-2xl font-bold text-blue-700">Classic River Cam Path</h3>
+        <a href="#close"
           class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
           aria-label="Close modal">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
+        </a>
       </div>
-      <div id="modalContentArea" class="p-6 space-y-4 overflow-y-auto">
-        <img id="modalImage" src="" alt="Route Image" class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <img src="images/river-cam.png" alt="River Cam Path" class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
         <div class="space-y-2 text-gray-700">
-          <p><span class="font-semibold">Distance:</span> <span id="modalDistance"></span></p>
-          <p><span class="font-semibold">Difficulty:</span> <span id="modalDifficulty" class=""></span></p>
-          <p id="modalShortDescription" class="italic text-gray-600"></p>
+          <p><span class="font-semibold">Distance:</span> 7km (Out and back)</p>
+          <p><span class="font-semibold">Difficulty:</span> <span class="text-green-600 font-semibold">Easy</span></p>
+          <p class="italic text-gray-600 mb-4">Enjoy a flat, scenic run or walk along the iconic River Cam, passing
+            boathouses and green spaces. Start near the city centre.</p>
           <h4 class="text-lg font-semibold pt-3 text-gray-800 border-t mt-4">More Details:</h4>
-          <div id="modalLongDescription" class="prose max-w-none text-sm sm:text-base">
-            <!-- Long description will be inserted here -->
+          <div class="text-sm sm:text-base">
+            <p class="mb-3">This iconic route is perfect for all abilities. Starting near Scudamore's Mill Lane Punting
+              Station, follow the well-paved path northwards. You'll pass St John's College, the 'Backs' of several
+              colleges, and numerous boathouses. Continue past Midsummer Common and Stourbridge Common.</p>
+            <p class="mb-3">The path can get busy, especially on sunny weekends. Consider an early morning or weekday
+              run for a quieter experience. Excellent for flat, consistent pacing. You can turn back at any point to
+              adjust the distance.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Modal for Route 2: Grantchester Meadows Loop -->
+  <div id="modal-route2"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm items-center justify-center p-4 z-[60] hidden target:flex"
+    aria-labelledby="modalTitle2" role="dialog" aria-modal="true">
+    <a href="#close" class="absolute inset-0" aria-label="Close modal backdrop"></a>
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-start p-5 border-b rounded-t">
+        <h3 id="modalTitle2" class="text-2xl font-bold text-blue-700">Grantchester Meadows Loop</h3>
+        <a href="#close"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+          aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </a>
+      </div>
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <img src="images/granchester.png" alt="Grantchester Meadows"
+          class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
+        <div class="space-y-2 text-gray-700">
+          <p><span class="font-semibold">Distance:</span> 5km</p>
+          <p><span class="font-semibold">Difficulty:</span> <span class="text-green-600 font-semibold">Easy</span></p>
+          <p class="italic text-gray-600 mb-4">A beautiful loop through the famous meadows where cows graze freely.
+            Perfect for a relaxed pace and enjoying nature.</p>
+          <h4 class="text-lg font-semibold pt-3 text-gray-800 border-t mt-4">More Details:</h4>
+          <div class="text-sm sm:text-base">
+            <p class="mb-3">Escape the city bustle with this idyllic loop. Start from the Lammas Land car park or by
+              walking down Grantchester Street. The path through the meadows is mostly grass, so it can be muddy after
+              rain. Enjoy views of King's College Chapel in the distance. You might share the path with grazing cows!
+            </p>
+            <p class="mb-3">You can extend the route by continuing towards Grantchester village for a refreshment stop
+              at The Orchard Tea Garden before looping back. A very family-friendly walk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Route 3: Milton Country Park Trails -->
+  <div id="modal-route3"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm items-center justify-center p-4 z-[60] hidden target:flex"
+    aria-labelledby="modalTitle3" role="dialog" aria-modal="true">
+    <a href="#close" class="absolute inset-0" aria-label="Close modal backdrop"></a>
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-start p-5 border-b rounded-t">
+        <h3 id="modalTitle3" class="text-2xl font-bold text-blue-700">Milton Country Park Trails</h3>
+        <a href="#close"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+          aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </a>
+      </div>
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <img src="images/milton.png" alt="Milton Country Park" class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
+        <div class="space-y-2 text-gray-700">
+          <p><span class="font-semibold">Distance:</span> 3-6km (Various loops)</p>
+          <p><span class="font-semibold">Difficulty:</span> <span class="text-yellow-600 font-semibold">Easy to
+              Moderate</span></p>
+          <p class="italic text-gray-600 mb-4">Explore varied trails around lakes and through woodlands. Great for trail
+            running or a family walk. Pay & display parking.</p>
+          <h4 class="text-lg font-semibold pt-3 text-gray-800 border-t mt-4">More Details:</h4>
+          <div class="text-sm sm:text-base">
+            <p class="mb-3">Located just north of Cambridge, Milton Country Park offers a network of well-maintained
+              gravel and dirt paths winding around several lakes and through diverse woodlands. There are marked trails
+              of varying lengths, making it easy to customize your run or walk from 3km to 6km or more.</p>
+            <p class="mb-3">It's a popular spot for dog walkers and families. Look out for varied birdlife. Paid parking
+              is available. Check their website for opening times and any events.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Route 4: Wandlebury & Gog Magog Hills -->
+  <div id="modal-route4"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm items-center justify-center p-4 z-[60] hidden target:flex"
+    aria-labelledby="modalTitle4" role="dialog" aria-modal="true">
+    <a href="#close" class="absolute inset-0" aria-label="Close modal backdrop"></a>
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-start p-5 border-b rounded-t">
+        <h3 id="modalTitle4" class="text-2xl font-bold text-blue-700">Wandlebury & Gog Magog Hills</h3>
+        <a href="#close"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+          aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </a>
+      </div>
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <img src="images/wandlebury.png" alt="Wandlebury Country Park"
+          class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
+        <div class="space-y-2 text-gray-700">
+          <p><span class="font-semibold">Distance:</span> 8-12km</p>
+          <p><span class="font-semibold">Difficulty:</span> <span class="text-yellow-600 font-semibold">Moderate</span>
+          </p>
+          <p class="italic text-gray-600 mb-4">Slightly further afield, offering rolling terrain with gentle hills and
+            expansive views. Ideal for a longer hike or a more challenging run.</p>
+          <h4 class="text-lg font-semibold pt-3 text-gray-800 border-t mt-4">More Details:</h4>
+          <div class="text-sm sm:text-base">
+            <p class="mb-3">For those seeking a bit more elevation and a taste of chalk grassland, Wandlebury Country
+              Park (a former Iron Age hillfort) and the adjacent Gog Magog Hills offer fantastic views. Trails are a mix
+              of woodland paths and open fields.</p>
+            <p class="mb-3">The 'Gogs' provide some of the only real hills in the immediate Cambridge area, great for
+              hill repeats or a more strenuous hike. Managed by Cambridge Past, Present & Future. Parking available
+              (charges may apply).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Route 5: Fen Rivers Way -->
+  <div id="modal-route5"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm items-center justify-center p-4 z-[60] hidden target:flex"
+    aria-labelledby="modalTitle5" role="dialog" aria-modal="true">
+    <a href="#close" class="absolute inset-0" aria-label="Close modal backdrop"></a>
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-start p-5 border-b rounded-t">
+        <h3 id="modalTitle5" class="text-2xl font-bold text-blue-700">Fen Rivers Way (Cambridge to Waterbeach)</h3>
+        <a href="#close"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+          aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </a>
+      </div>
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <img src="images/fen-way.png" alt="Fen Rivers Way Section"
+          class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
+        <div class="space-y-2 text-gray-700">
+          <p><span class="font-semibold">Distance:</span> ~10km (One way)</p>
+          <p><span class="font-semibold">Difficulty:</span> <span class="text-yellow-600 font-semibold">Moderate</span>
+          </p>
+          <p class="italic text-gray-600 mb-4">Follow a section of this long-distance path along the River Cam. Mostly
+            flat but can be muddy. Train back from Waterbeach for a one-way trip.</p>
+          <h4 class="text-lg font-semibold pt-3 text-gray-800 border-t mt-4">More Details:</h4>
+          <div class="text-sm sm:text-base">
+            <p class="mb-3">This section of the long-distance Fen Rivers Way offers a true Fenland experience. The path
+              follows the River Cam (or sometimes a parallel lode) northwards from Cambridge. It's very flat but can be
+              exposed to wind.</p>
+            <p class="mb-3">The surface is mixed, sometimes grassy, sometimes a bit rougher, and prone to muddiness
+              after wet weather. It's great for seeing Fenland wildlife. The ~10km stretch to Waterbeach is popular,
+              with a convenient train station in Waterbeach for the return journey to Cambridge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Route 6: Cambridge "Green Ring" Challenge -->
+  <div id="modal-route6"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm items-center justify-center p-4 z-[60] hidden target:flex"
+    aria-labelledby="modalTitle6" role="dialog" aria-modal="true">
+    <a href="#close" class="absolute inset-0" aria-label="Close modal backdrop"></a>
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
+      <div class="flex justify-between items-start p-5 border-b rounded-t">
+        <h3 id="modalTitle6" class="text-2xl font-bold text-blue-700">Cambridge "Green Ring" Challenge</h3>
+        <a href="#close"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+          aria-label="Close modal">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </a>
+      </div>
+      <div class="p-6 space-y-4 overflow-y-auto">
+        <img src="images/green-ring.png" alt="Cambridge Outer Ring Path"
+          class="w-full h-64 md:h-80 object-cover rounded-md mb-4">
+        <div class="space-y-2 text-gray-700">
+          <p><span class="font-semibold">Distance:</span> 20km+</p>
+          <p><span class="font-semibold">Difficulty:</span> <span class="text-red-600 font-semibold">Hard</span></p>
+          <p class="italic text-gray-600 mb-4">A challenging, longer route circumnavigating Cambridge, linking various
+            green spaces, towpaths, and quieter roads. Requires good stamina and navigation.</p>
+          <h4 class="text-lg font-semibold pt-3 text-gray-800 border-t mt-4">More Details:</h4>
+          <div class="text-sm sm:text-base">
+            <p class="mb-3">This is a more ambitious, self-devised challenge for experienced runners or long-distance
+              walkers. The concept is to link up various green spaces, cycle paths, towpaths, and quieter residential
+              streets to create a loop of 20km or more circumnavigating the city.</p>
+            <p class="mb-3">It requires good navigation skills (using a map app like Komoot or Strava route builder is
+              recommended) and self-sufficiency. Expect varied terrain. A great way to explore the different facets of
+              Cambridge's periphery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle (Minimal JS)
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileNavLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
@@ -378,76 +472,6 @@
         });
       });
     }
-
-    // Route Details Modal Logic
-    const routeModal = document.getElementById('routeModal');
-    const modalDialog = document.getElementById('modalDialog');
-    const closeModalButton = document.getElementById('closeModalButton');
-    const openModalButtons = document.querySelectorAll('.open-route-modal-button');
-
-    const modalElements = {
-      image: document.getElementById('modalImage'),
-      title: document.getElementById('modalTitle'),
-      distance: document.getElementById('modalDistance'),
-      difficulty: document.getElementById('modalDifficulty'),
-      shortDescription: document.getElementById('modalShortDescription'),
-      longDescription: document.getElementById('modalLongDescription')
-    };
-
-    function openModal(event) {
-      event.preventDefault();
-      const button = event.currentTarget;
-
-      modalElements.image.src = button.dataset.modalImageSrc;
-      modalElements.image.alt = button.dataset.modalTitle;
-      modalElements.title.textContent = button.dataset.modalTitle;
-      modalElements.distance.textContent = button.dataset.modalDistance;
-      modalElements.difficulty.textContent = button.dataset.modalDifficulty;
-      modalElements.difficulty.className = button.dataset.modalDifficultyClass; // Apply color class
-      modalElements.shortDescription.textContent = button.dataset.modalShortDescription;
-      modalElements.longDescription.innerHTML = button.dataset.modalLongDescription; // Use innerHTML for <br> tags
-
-      routeModal.classList.remove('hidden');
-      document.body.classList.add('overflow-hidden'); // Prevent body scroll
-      // Trigger reflow to ensure transition plays
-      void modalDialog.offsetWidth;
-      modalDialog.classList.remove('scale-95', 'opacity-0');
-      modalDialog.classList.add('scale-100', 'opacity-100');
-    }
-
-    function closeModal() {
-      modalDialog.classList.add('scale-95', 'opacity-0');
-      modalDialog.classList.remove('scale-100', 'opacity-100');
-
-      // Wait for animation to finish before hiding
-      setTimeout(() => {
-        routeModal.classList.add('hidden');
-        document.body.classList.remove('overflow-hidden');
-      }, 300); // Should match transition duration
-    }
-
-    if (routeModal && closeModalButton && openModalButtons.length > 0) {
-      openModalButtons.forEach(button => {
-        button.addEventListener('click', openModal);
-      });
-
-      closeModalButton.addEventListener('click', closeModal);
-
-      // Close modal if backdrop is clicked
-      routeModal.addEventListener('click', (event) => {
-        if (event.target === routeModal) { // Check if the click is on the backdrop itself
-          closeModal();
-        }
-      });
-
-      // Close modal on Escape key press
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && !routeModal.classList.contains('hidden')) {
-          closeModal();
-        }
-      });
-    }
-
   </script>
 
 </body>
